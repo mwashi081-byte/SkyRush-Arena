@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1b">
+  <title>SkyRush Arena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">✦</span><span>SKYRUSH <b>ARENA</b></span></a>
+      <div class="top-actions">
+        <span class="demo-tag">VIRTUAL COINS · DEMO</span>
+        <button id="logoutBtn" class="ghost hidden">Log out</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="authView" class="auth-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">THE NEXT FLIGHT STARTS HERE</p>
+          <h1>Catch the<br><span>perfect lift.</span></h1>
+          <p class="muted">A fast-paced crash game experience. Create an account and play with virtual coins — no real-money deposits or withdrawals.</p>
+          <div class="feature-row"><span>✈ Live multiplier</span><span>◈ Instant cashout</span><span>♛ Leaderboard</span></div>
+        </div>
+        <div class="auth-card">
+          <div class="tabs"><button class="tab active" data-tab="login">Log in</button><button class="tab" data-tab="signup">Create account</button></div>
+          <form id="authForm">
+            <h2 id="authTitle">Welcome back</h2>
+            <p id="authSubtitle" class="muted small">Log in to enter the arena.</p>
+            <label>Username<input id="username" autocomplete="username" minlength="3" maxlength="18" required placeholder="e.g. skyplayer"></label>
+            <label>Password<input id="password" type="password" autocomplete="current-password" minlength="4" required placeholder="At least 4 characters"></label>
+            <button class="primary full" type="submit" id="authSubmit">Log in <span>→</span></button>
+            <p id="authMessage" class="form-message" role="status"></p>
+          </form>
+          <p class="fine-print">Demo accounts are stored in this browser only. Do not use a real password.</p>
+        </div>
+      </section>
+
+      <section id="gameView" class="hidden">
+        <div class="welcome-row">
+          <div><p class="eyebrow">PLAYER ARENA</p><h1>Ready for takeoff, <span id="playerName">Pilot</span>?</h1></div>
+          <div class="wallet"><span>YOUR VIRTUAL BALANCE</span><strong>◈ <b id="balance">200.00</b></strong></div>
+        </div>
+        <div class="game-grid">
+          <section class="game-panel">
+            <div class="game-meta"><span class="live-dot"></span><span id="roundStatus">WAITING FOR NEXT ROUND</span><span class="round-id" id="roundId">ROUND #001</span></div>
+            <div class="sky" id="sky">
+              <div class="stars"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+              <div class="flight-path"></div>
+              <div class="plane" id="plane">✈</div>
+              <div class="multiplier" id="multiplier">1.00<span>x</span></div>
+              <div class="sky-message" id="skyMessage">PLACE YOUR BET</div>
+              <div class="crash-flash hidden" id="crashFlash">✦ FLIGHT ENDED</div>
+            </div>
+            <div class="bet-controls">
+              <div class="bet-input-wrap"><label for="betAmount">BET AMOUNT <small>(virtual coins)</small></label><div class="amount-row"><button id="minusBet" class="step">−</button><input id="betAmount" type="number" min="1" max="100000" step="1" value="20"><button id="plusBet" class="step">+</button></div><div class="quick-bets"><button data-bet="10">10</button><button data-bet="20">20</button><button data-bet="50">50</button><button data-bet="100">100</button><button id="halfBet">½</button><button id="maxBet">MAX</button></div></div>
+              <div class="bet-action"><div class="potential"><span>POTENTIAL RETURN</span><b id="potentialReturn">20.00</b></div><button id="playBtn" class="primary play">PLACE BET <span>↗</span></button><button id="cashoutBtn" class="cashout hidden">CASH OUT <span id="cashoutValue">20.00</span></button></div>
+            </div>
+          </section>
+          <aside class="side-column">
+            <section class="side-card"><div class="card-heading"><h3>FLIGHT HISTORY</h3><span>LAST ROUNDS</span></div><div id="historyChips" class="history-chips"><span class="empty">No rounds yet</span></div></section>
+            <section class="side-card"><div class="card-heading"><h3>YOUR ACTIVITY</h3><span>RECENT</span></div><div id="activityList" class="activity-list"><p class="empty">Your game activity will appear here.</p></div></section>
+            <section class="side-card leaderboard"><div class="card-heading"><h3>TOP PILOTS</h3><span>THIS SESSION</span></div><div id="leaderboard"><p class="empty">Play a round to join the board.</p></div></section>
+          </aside>
+        </div>
+        <p class="disclaimer">SkyRush Arena is a simulated entertainment game. Coins have no cash value and cannot be purchased, transferred, redeemed, or withdrawn.</p>
+      </section>
+    </main>
+    <footer><span>© 2026 SKYRUSH ARENA</span><span>FLY SMART · PLAY FOR FUN</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
